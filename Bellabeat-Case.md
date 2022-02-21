@@ -305,7 +305,7 @@ users of all ages.
 
 -   There isn’t much information about how much sedentary time is too
     much, but Just Stand.org [Just
-    Stand.org](https://www.juststand.org/the-tools/sitting-time-calculator/)says
+    Stand.org](https://www.juststand.org/the-tools/sitting-time-calculator/) says
     that on average we sit for 7.7 hours a day. Users in the study were
     averaging about 16.5 hours a day. Long periods of sitting have been
     linked to obesity, heart disease, high blood pressure, diabetes, and
