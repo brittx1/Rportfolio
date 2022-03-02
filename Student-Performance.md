@@ -24,40 +24,8 @@ race/ethnicity play a role in student performance.
 link to data set:[Student
 Performance](https://www.kaggle.com/spscientist/students-performance-in-exams)
 
-## Install Packages and Import data
+## Import data
 
-``` r
-options(repos = list(CRAN="http://cran.rstudio.com/"))
-install.packages("tidyverse")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpoIDzPQ/downloaded_packages
-
-``` r
-install.packages("rstatix")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpoIDzPQ/downloaded_packages
-
-``` r
-install.packages("ggpubr")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpoIDzPQ/downloaded_packages
-
-``` r
-install.packages("cowplot")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpoIDzPQ/downloaded_packages
 
 ``` r
 library(tidyverse)
