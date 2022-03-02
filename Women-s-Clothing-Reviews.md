@@ -21,54 +21,6 @@ the
 
 company how their products are doing.
 
-``` {r message = FALSE}
-options(repos = list(CRAN="http://cran.rstudio.com/"))
-install.packages("tidyverse")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpI0aDNe/downloaded_packages
-
-``` {r message = FALSE}
-install.packages("tidytext")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpI0aDNe/downloaded_packages
-
-``` {r message = FALSE}
-install.packages("wordcloud")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpI0aDNe/downloaded_packages
-
-``` {r message = FALSE}
-install.packages("ggforce")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpI0aDNe/downloaded_packages
-
-``` {r message = FALSE}
-install.packages("textdata")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpI0aDNe/downloaded_packages
-
-``` {r message = FALSE}
-install.packages("reshape2")
-```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/p_/n9dk52q92ld5svrw21rdqf7w0000gn/T//RtmpI0aDNe/downloaded_packages
 
 ``` r
 library(dplyr)
