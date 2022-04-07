@@ -322,12 +322,12 @@ ggplot(Bing_Pie, aes(x = "", y = perc, fill = sentiment)) +
 
 ![](Women-s-Clothing-Reviews_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
-The figure shows that there are more words contributing to the negative
+The figure shows that there are more words contributing to the positive
 
-sentiment, **58%**, than the positive sentiment, **48%**.Here are some
+sentiment, **74%**, than the negative sentiment, **26%**.Here are some
 of the
 
-words that contributed most to the positive and negative sentiments.
+words that contributed most to the sentiments.
 
 ![](Contribution.jpeg) **Figure 1**
 
