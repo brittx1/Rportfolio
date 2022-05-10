@@ -22,17 +22,7 @@ the
 company how their products are doing.
 
 
-``` r
-library(dplyr)
-library(tidyr)
-library(tidytext)
-library(tidyverse)
-library(wordcloud)
-library(ggforce)
-library(textdata)
-library(reshape2)
-library(stats)
-```
+
 
 ## Data and Importation
 
