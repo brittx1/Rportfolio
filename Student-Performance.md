@@ -716,16 +716,22 @@ is overall beneficial.
 **Race/Ethnicity**
 
 There were significant differences between racial groups. Group A is the
-lowest performing group in math, reading, and writing. Of course the
-school can’t split students up by race for studying because I’m sure
-that would be a lawsuit, but like how colleges have groups like Latinos
-in law or African Americans for Change. The school could try to have
-after school study groups like that. Anyone would be able to join, but
-it would be geared towards those of that certain ethnicity group. To not
-seem prejudice or racist the school should show the statistics of the
-group scores as well as forming groups for all the different races and
-ethnicities. The groups could be a combination of studying as well as
-sharing ethnic cultural and more. This is also not a taboo move, in
+lowest performing group in math, reading, and writing. Studies have found that 
+students of color are suspended at much higher rates than white students and
+on average these students perform poorly on standardized tests compared to 
+their white classmates. 
+Recently a Stanford-led study found that an increase in the achievement
+gap between Black and white students also predicts a larger than average
+discipline gap. They also found a significant association between the
+Hispanic-white achievement and discipline gaps, but after controlling for 
+other factors such as local poverty and education levels the gap disappeared.
+So, that suggests that teacher biases and feeling isolated at school is mostly
+felt by Black students (Spector,2021).
+To combat this schools should adopt ethnic study programs like how colleges
+have groups like Latinos in law or African Americans for Change.Anyone would be
+able to join, but it would be geared towards those of that certain ethnicity group. 
+The groups could be a combination of studying as well as
+culturally relevant teaching. This is also not a taboo move, in
 California alone there are numerous racial organizations that have been
 popping up in many high schools [Seo
 Article](https://www.latimes.com/archives/la-xpm-1996-05-12-mn-3441-story.html).
@@ -749,3 +755,6 @@ of Educational Progress (NAEP)*.
 
 Seo, D. (1996, May 12). *Do School Ethnic Clubs Unify or Divide?*. CNN.
 <https://www.latimes.com/archives/la-xpm-1996-05-12-mn-3441-story.html>
+
+Spector, C. (2021, December 16). *Racial disparities in school discipline are linked to the achievement gap between black and white students nationwide, according to Stanford-led study. Stanford Graduate School of Education*.
+<https://ed.stanford.edu/news/racial-disparities-school-discipline-are-linked-achievement-gap-between-black-and-white> 
