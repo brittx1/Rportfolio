@@ -53,7 +53,7 @@ The city of San Francisco had the highest number of sales.
 
 #### What time should we display advertisement to maximize likelihood of customer’s buying product?
 
-![screenshot](Screenshot(32).png) ![screenshot_4](Screenshot(31).png)
+![ten](ten.png) ![four](four.png)
 
 The company should display ads between the hours of **10 AM and 11 AM**
 as well as **4 PM and 5 PM**. This is because these are the hours before
