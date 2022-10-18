@@ -1,0 +1,61 @@
+---
+title: "Customer Segments"
+author: "Brittny Huggins"
+output: github_document
+---
+```{r include=FALSE, source("C:/Rscripts/source.R")}
+
+install.packages("packcircles")
+install.packages("viridis")
+install.packages("ggiraph")
+install.packages("dplyr")
+install.packages("tidyverse")
+library(packcircles)
+library(viridis)
+library(ggiraph)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+df  <- read.csv("crowdfunding (1).csv")
+```
+
+## Objectives 
+1. What are the top three categories in terms of total donations? 
+2. What device type has historically provided the most contributions? 
+3. What age bracket should the campaign target?
+
+
+
+
+```{r echo=FALSE}
+data <- data.frame(
+     root=rep("root", 6),
+     group=c(rep("Top Categories",3)," ", "Devices", "Target\nAge Bracket"), 
+     subgroup= c("Games", "Sports", "Technology", "Android", "iOS", "18-24"),
+     value=c(165483, 163528, 162731, 7199, 13459, 411077),
+     contributions=c("EUR 165,483", "EUR 163,528", "EUR 162,731", "7,199", "13,459","EUR 411,077"),
+     story= c("Category with the most donations","2nd place in terms of total donations","3rd place in terms of total donations"," ","iOS devices historically provided the most contributions", "This age bracket had the most total donations!" )
+ )
+ 
+ data$text <- paste(data$subgroup, "\n", "Total Donations/Contributions:", data$contributions, "\n", data$story)
+ packing <- circleProgressiveLayout(data$value, sizetype='area')
+ packing$radius <- 0.95*packing$radius
+ data <- cbind(data, packing)
+ dat.gg <- circleLayoutVertices(packing, npoints=50)
+ 
+p <- ggplot() + 
+    geom_polygon_interactive(data = dat.gg, aes(x, y, group = id, fill=id, tooltip = data$text[id], data_id = id), colour = "black", alpha = 0.6) +
+    scale_fill_viridis(option= "C") +
+    geom_text(data = data, aes(x, y, label = group), size=4, color="black", fontface= "bold") +
+    theme_void() + 
+    theme(plot.background = element_rect(fill="snow1"),
+    plot.title = element_text(size=22,face="bold",color="black"),
+    legend.position="none", plot.margin=unit(c(0,0,0,0),"cm")) + 
+    coord_equal() +
+    ggtitle("Customer Segments for\nCampaign") 
+ 
+ 
+ widg <- ggiraph(ggobj = p, width_svg = 10, height_svg = 10)
+
+widg
+```
