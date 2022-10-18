@@ -137,54 +137,15 @@ head(df)
 
 #### What was the best month for sales and how much was earned that month?
 
-```{r  echo=FALSE}
-mon_sales <- df %>% group_by(month) %>% dplyr::summarise(Total.Products.Sold = sum(Quantity.Ordered)) %>% arrange(desc(Total.Products.Sold))
-
-mon_sales <- mon_sales %>% filter(month != "NA")
-
-
-ggplot(data=mon_sales, aes(x = reorder(month, -Total.Products.Sold), y = Total.Products.Sold)) + geom_text(aes(label = format(Total.Products.Sold,big.mark = ",", scientific = FALSE)), vjust = -.5, position = position_dodge(width = 1))+ 
-geom_bar(colour="black", stat="identity", fill = "#69b3a2", position = position_dodge()) + xlab("Month") + ggtitle("Total Products Sold per Month") + theme(plot.title = element_text(hjust = 0.5), axis.text.y =element_blank(), axis.ticks.y=element_blank(), axis.title.y = element_blank(), panel.border = element_blank(), panel.grid.major = element_blank(),
-panel.grid.minor = element_blank()) 
-
-```
+![best_month](best.month.png)
 
 December was the best month for sales where the number of products sold reached 28,074. $4,613,443 was earned in the month of December. 
 
 
 #### Which city had the highest number of sales?
 
-```{r  echo=FALSE}
+![city.sales](city_sales.png) 
 
-#highest total product sold 
-city_sales <- df %>%
-     group_by(City) %>%
-     dplyr::summarise(Products.Sold = sum(Quantity.Ordered)) %>% 
-     arrange(desc(Products.Sold))
-
-city_sales <- city_sales %>% filter(Products.Sold != "NA")
-
-#Sales in dollars 
-dol_sales <- df %>% group_by(City) %>% dplyr::summarise(Product.Sales = sum(Sales.Totals.Price))
-
-dol_sales <- dol_sales %>% filter(Product.Sales != "NA")
-
-#join tables
-city_sales <- merge(x=city_sales,y=dol_sales,by = "City")
-
-city_sales <- city_sales %>% arrange(desc(Products.Sold))
-
-#format 
-city_sales$Products.Sold <- format(city_sales$Products.Sold, big.mark = ",", scientific = FALSE)
-
-city_sales$Product.Sales <- dollar(city_sales$Product.Sales)
-  
-colnames(city_sales) <- c("City", "Total Products Sold", "Sales in $")
-
-
-grid.table(city_sales)
-
-```
 
 The city of San Francisco had the highest number of sales. 
 
@@ -238,6 +199,21 @@ p <- ggplotly(p)
 
 p
 ```
+
+```{r include, echo = FALSE}
+htmlwidgets::saveWidget(p, "index.html")
+
+htmltools::tags$iframe(
+  src=file.path(getwd(), "index.html"),
+  width="100%",
+  height="600",
+  scrolling="no",
+  seamless="seamless",
+  frameBorder="0"
+)
+
+```
+
 
 The company should display ads between the hours of **10 AM and 11 AM** as well as **4 PM and 5 PM**. This is because these are the hours before peak sale times for products. 
 
