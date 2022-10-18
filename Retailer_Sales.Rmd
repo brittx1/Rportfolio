@@ -2,7 +2,6 @@
 title: "Sales Analysis"
 author: "Brittny Huggins"
 output: github_document
-always_allow_html: true
 ---
 
 
@@ -152,70 +151,12 @@ The city of San Francisco had the highest number of sales.
 
 
 #### What time should we display advertisement to maximize likelihood of customer's buying product?
-```{r  echo=FALSE}
 
-df$rtime <- round_date(df$Order.Date,unit="hour")
-
-df$rtime <- format(df$rtime,"%I:%M:%S %p")
-
-df[c("New_time", "ap")] <- str_split_fixed(df$rtime, ' ', 2)
-
-inall <-df[,c("New_time","ap", "Quantity.Ordered")]
-
-cmb<- factor(c("12:00:00 AM", "01:00:00 AM" , "02:00:00 AM", "03:00:00 AM","04:00:00 AM","05:00:00 AM" ,"06:00:00 AM" ,"07:00:00 AM","08:00:00 AM","09:00:00 AM","10:00:00 AM","11:00:00 AM","12:00:00 PM","01:00:00 PM","02:00:00 PM","03:00:00 PM","04:00:00 PM","05:00:00 PM","06:00:00 PM" ,"07:00:00 PM" ,"08:00:00 PM","09:00:00 PM","10:00:00 PM","11:00:00 PM" ))
-
-inall$combined <- paste(inall$New_time, inall$ap)
-
-total.items.tt <- inall %>%
-    group_by(combined) %>%
-    dplyr::summarise(Items.Sold = sum(Quantity.Ordered))
-
-total.items.tt<- total.items.tt %>% filter(Items.Sold != "NA")
+![screenshot](Screenshot(32).png)
+![screenshot_4](Screenshot(31).png)
 
 
-total.items.tt$Time <- factor(total.items.tt$combined, levels = cmb)
-
-
-
-items.tt <- total.items.tt[order(total.items.tt$Time),]
-
-p <- items.tt %>%
-    ggplot(aes(x=Time, y=Items.Sold, group = 1)) +
-    geom_area(fill="#69b3a2", alpha=0.5) +
-    geom_line(color="#69b3a2") +
-    ylab("Items Sold") +
-    xlab(NULL) + 
-    theme_ipsum() +
-    theme(axis.text.x=element_blank(),
-    panel.grid.major.x = element_blank() ,
-    panel.grid.major.y = element_line( size=.1, color="gray97") ,
-    plot.title = element_text(hjust = 0.5)
-    ) +
-    ggtitle("Total Items Sold per Hour") 
-    
-
-                  
-p <- ggplotly(p)
-
-p
-```
-
-```{r include, echo = FALSE}
-htmlwidgets::saveWidget(p, "index.html")
-
-htmltools::tags$iframe(
-  src=file.path(getwd(), "index.html"),
-  width="100%",
-  height="600",
-  scrolling="no",
-  seamless="seamless",
-  frameBorder="0"
-)
-
-```
-
-
-The company should display ads between the hours of **10 AM and 11 AM** as well as **4 PM and 5 PM**. This is because these are the hours before peak sale times for products. 
+The company should display ads between the hours of **10 AM and 11 AM** as well as **4 PM and 5 PM**. This is because these are the hours before peak sale times for products. (interactive version of graph is available upon request)
 
 #### What product sold the most? Why do you think it sold the most?
 ```{r  echo=FALSE}
